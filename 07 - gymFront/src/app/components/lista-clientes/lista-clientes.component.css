@@ -1,0 +1,15 @@
+.clientes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cliente {
+  border: 1px solid rgb(96, 46, 146);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 5px 5px 10px #ddd;
+  background: linear-gradient(to top, rgba(96, 46, 146, 0.11), rgba(96, 46, 146, 0.37));
+}

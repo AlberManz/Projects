@@ -1,0 +1,13 @@
+.profesores {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.profesor {
+  border: 1px solid rgb(46, 146, 113);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 5px 5px 10px #ddd;
+  background: linear-gradient(to top, rgba(46, 146, 113, 0.11), rgba(46, 146, 113, 0.37));
+}

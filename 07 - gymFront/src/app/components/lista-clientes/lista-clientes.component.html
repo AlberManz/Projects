@@ -1,0 +1,11 @@
+<div class="clientes">
+  <div class="cliente" *ngFor="let cliente of arrClientes">
+    <h2>{{cliente.nombre}} {{cliente.apellidos}}</h2>
+    <p>Dirección: {{cliente.direccion}}</p>
+    <p>Email: {{cliente.email}}</p>
+    <p>Fecha Nac.: {{cliente.fecha_nacimiento}}</p>
+    <p>Edad: {{cliente.edad}}</p>
+    <button (click)="deleteClient(cliente.id)">🧻 Borrar</button>
+  </div>
+</div>
+

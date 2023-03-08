@@ -1,0 +1,24 @@
+<div class="profesores">
+  <div class="profesor" *ngFor="let profesor of arrProfesores">
+    <h2>{{profesor.nombre}}</h2>
+    <p>Experiencia: {{profesor.experiencia}}</p>
+    <button (click)="deleteProfesor(profesor.id)">🧻 Borrar</button>
+  </div>
+</div>
+
+
+<!--! CON UNA TABLA  -->
+<!-- <table>
+  <thead>
+    <th>#id</th>
+    <th>Nombre</th>
+    <th>Experiencia</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let profesor of arrProfesores">
+      <td>{{profesor.id}}</td>
+      <td>{{profesor.nombre}}</td>
+      <td>{{profesor.experiencia}}</td>
+    </tr>
+  </tbody>
+</table> -->

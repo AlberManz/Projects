@@ -1,0 +1,14 @@
+<div class="header">
+  <div class="header-right">
+    <div  *ngIf="usuariosService.isLogged()">
+      <a [routerLink]="['/clientes']">Clientes</a>
+      <a [routerLink]="['/clientes', 'new']">Nuevo cliente</a>
+      <a [routerLink]="['/profesores']">Profesores</a>
+      <a (click)="onLogout()">Logout</a>
+    </div>
+    <div *ngIf="!usuariosService.isLogged()">
+      <a [routerLink]="['/registro']">Registro</a>
+      <a [routerLink]="['/login']">Login</a>
+    </div>
+  </div>
+</div>
