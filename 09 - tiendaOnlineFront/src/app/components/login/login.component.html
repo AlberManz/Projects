@@ -1,0 +1,16 @@
+<section class="row mt-5">
+  <div class="col-12 col-md-6 offset-0 offset-md-3">
+    <h2 class="mb-4">Login usuario</h2>
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+      <div>
+        <label class="form-label" for="email">Email</label>
+        <input class="form-control" type="text" formControlName="email">
+      </div>
+      <div>
+        <label class="form-label" for="password">Password</label>
+        <input class="form-control" type="password" formControlName="password">
+      </div>
+      <input class="btn btn-dark mt-3" type="submit" value="Login">
+    </form>
+  </div>
+</section>
