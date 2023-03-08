@@ -1,0 +1,40 @@
+<section class="container mt-3">
+  <h2>{{titulo}}</h2>
+  <form [formGroup]="form" (ngSubmit)="getDataForm()">
+    <div class="mt-2">
+      <label for="name" class="form-label">Nombre</label>
+      <input type="text" id="name" class="form-control" placeholder="Nombre del producto..." formControlName="name">
+    </div>
+
+    <div class="mt-2">
+      <label for="description" class="form-label">Descripción</label>
+      <textarea id="description" cols="30" rows="10" class="form-control" placeholder="Escribe la descripción del producto..." formControlName="description"></textarea>
+    </div>
+
+    <div class="mt-2">
+      <label for="price" class="form-label">Precio</label>
+      <input type="number" id="price" class="form-control" placeholder="Precio del producto..." formControlName="price">
+    </div>
+
+    <div class="mt-2" *ngIf="arrCategorias.length > 1">
+      <label for="category" class="form-label">Categoría</label>
+      <select id="category" class="form-select" formControlName="category">
+        <option value="" selected>Selecciona una categoría</option>
+        <option *ngFor="let categoria of arrCategorias" [value]="categoria">{{categoria.toUpperCase()}}</option>
+      </select>
+    </div>
+
+    <div class="mt-2">
+      <label for="image" class="form-label">Imagen</label>
+      <input type="text" id="image" class="form-control" placeholder="Url de la imagen..." formControlName="image">
+    </div>
+
+    <div class="mt-2">
+      <label for="active">Publicar producto</label>
+      <input class="ms-1" type="checkbox" id="active" formControlName="active">
+    </div>
+
+    <input type="submit" [value]="titulo" class="btn btn-warning mt-3">
+  </form>
+</section>
+<app-myalert [message]="mensaje" [viewAlert]="vistaAlerta" [typeAlert]="tipoAlerta"></app-myalert>

@@ -1,0 +1,43 @@
+<section class="container">
+  <div class="card shadow p-3 m-3">
+    <form novalidate [formGroup]="registerForm" (ngSubmit)="getDataForm()">
+      <div>
+        <label for="first_name" class="form-label">Nombre</label>
+        <input type="text" id="first_name" formControlName="first_name" class="form-control" placeholder="Introduce tu nombre">
+        <p class="text-danger" *ngIf="checkControl('first_name', 'required')"><small>Campo obligatorio</small></p>
+        <p class="text-danger" *ngIf="checkControl('first_name', 'minlength')"><small>Longitud mínima de 3 caracteres</small></p>
+      </div>
+
+      <div>
+        <label for="last_name" class="form-label">Apellido</label>
+        <input type="text" id="last_name" formControlName="last_name" class="form-control" placeholder="Introduce tu apellido">
+        <p class="text-danger" *ngIf="checkControl('last_name', 'required')"><small>Campo obligatorio</small></p>
+      </div>
+
+      <div>
+        <label for="email" class="form-label">Email</label>
+        <input type="mail" id="email" formControlName="email" class="form-control" placeholder="Introduce tu email">
+        <p class="text-danger" *ngIf="checkControl('email', 'required')"><small>Campo obligatorio</small></p>
+        <p class="text-danger" *ngIf="checkControl('email', 'pattern')"><small>Email incorrecto</small></p>
+      </div>
+
+      <div>
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" formControlName="password" class="form-control" placeholder="Introduce un password">
+        <p class="text-danger" *ngIf="checkControl('password', 'required')"><small>Campo obligatorio</small></p>
+        <p class="text-danger" *ngIf="checkControl('password', 'minlength')"><small>El password debe tener entre 5 y 8 caracteres</small></p>
+        <p class="text-danger" *ngIf="checkControl('password', 'maxlength')"><small>El password debe tener entre 5 y 8 caracteres</small></p>
+      </div>
+
+      <div>
+        <label for="avatar" class="form-label">Avatar</label>
+        <input type="text" id="avatar" formControlName="avatar" class="form-control" placeholder="Url de foto">
+      </div>
+
+      <input [disabled]="registerForm.invalid" type="submit" value="Register" class="btn btn-warning mt-3">
+    </form>
+  </div>
+
+  <app-myalert [message]="message" [viewAlert]="viewAlert" [typeAlert]="typeAlert"></app-myalert>
+
+</section>
