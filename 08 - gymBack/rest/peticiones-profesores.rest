@@ -1,0 +1,35 @@
+
+@hostname = http://localhost
+@port = 3000
+
+###
+GET {{hostname}}:{{port}}/api/profesores
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNCwidXNlcl9yb2xlIjoicmVndWxhciIsImV4cCI6MTY3MzUxMjI1NywiaWF0IjoxNjczNTExOTU3fQ.iJlE1ABzUc0YEEtq6OC2d3-1Wl5oMG-8oYYVBoELg0o
+
+###
+GET {{hostname}}:{{port}}/api/profesores/49
+
+###
+GET {{hostname}}:{{port}}/api/profesores/clientes
+
+###
+GET {{hostname}}:{{port}}/api/profesores/nombres
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozMywidXNlcl9yb2xlIjoicmVndWxhciIsImV4cCI6MTY3MzUwNzQ1NSwiaWF0IjoxNjczNTA3MTU1fQ.tn_miORG5YvY8sirCxXGRO-JkA5ofU7cXcCeU1POF-I
+
+###
+POST {{hostname}}:{{port}}/api/profesores
+Content-Type: application/json
+
+{
+  "nombre": "Celia",
+  "experiencia": 7
+}
+
+###
+PUT {{hostname}}:{{port}}/api/profesores/49
+Content-Type: application/json
+
+{
+  "nombre": "Alfonso Blair Gomez",
+  "experiencia": 7
+}

@@ -1,0 +1,61 @@
+#! De esta forma creamos una variable para poder usar en lugar de la url (está en la documentación de la extensión Rest Client
+@hostname = http://localhost
+@port = 3000
+
+###
+# GET {{hostname}}:{{port}}/api/clientes?page=45&limit=30
+GET {{hostname}}:{{port}}/api/clientes?page=2&limit=10
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozMywidXNlcl9yb2xlIjoicmVndWxhciIsImV4cCI6MTY3NzIzMDI4NSwiaWF0IjoxNjc0MjA2Mjg1fQ.Hmtrbml3zbRsOrYq20HWYn8SN6SzEO0yN-gCnnB4Bww
+// Este token para la autorización lo he sacado de peticiones-usuarios al hacer login me devuelve un token válido
+
+###
+GET {{hostname}}:{{port}}/api/clientes/then-catch
+
+###
+GET {{hostname}}:{{port}}/api/clientes/async-await
+
+###
+GET {{hostname}}:{{port}}/api/clientes/49
+
+###
+GET {{hostname}}:{{port}}/api/clientes/edad/71
+
+###
+POST {{hostname}}:{{port}}/api/clientes
+Content-Type: application/json
+
+{
+    "nombre": "Pepe",
+    "apellidos": "Villuelas",
+    "direccion": "Amapolas 3",
+    "email": "pepe2@mail.com",
+    "edad": 21,
+    "genero": "m",
+    "cuota": "39.90",
+    "fecha_nacimiento": "2001-10-13",
+    "dni": "526001763t"
+}
+
+###
+PUT {{hostname}}:{{port}}/api/clientes/49
+Content-Type: application/json
+
+{
+  "nombre": "Clemente",
+  "apellidos": "Olifaunt",
+  "direccion": "51 Northwestern Point",
+  "email": "colifaunt1c@blogspot.com",
+  "edad": 60,
+  "genero": "m",
+  "cuota": "16.90",
+  "fecha_nacimiento": "1996-11-08",
+  "dni": "288949468d"
+}
+
+###
+DELETE {{hostname}}:{{port}}/api/clientes/134
+
+
+
+
+

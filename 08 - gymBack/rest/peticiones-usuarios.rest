@@ -1,0 +1,31 @@
+
+@hostname = http://localhost
+@port = 3000
+
+@url = {{hostname}}:{{port}}
+
+###
+GET {{url}}/api/usuarios/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozMywidXNlcl9yb2xlIjoicmVndWxhciIsImV4cCI6MTY3MzUxMjk2NCwiaWF0IjoxNjczNTEyNjY0fQ.MRL_Ry44z_wP0yoJp5W0QZXJUgHwnVj6H54NNaW_IqU
+
+###
+POST {{url}}/api/usuarios/registro
+Content-Type: application/json
+
+{
+  "username": "Amadeo",
+  "email": "amadeo@mail.com",
+  "password": "12345"
+}
+
+###
+POST {{url}}/api/usuarios/login
+Content-Type: application/json
+
+{
+  "email": "alber@mail.com",
+  "password": "12345"
+}
+
+
+
