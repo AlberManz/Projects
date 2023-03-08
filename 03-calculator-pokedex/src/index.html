@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://icon-library.com/images/pokedex-icon/pokedex-icon-21.jpg">
+  <link rel="stylesheet" href="./styles/css/style.css">
+  <title>Pokedex calculator</title>
+</head>
+  <body>
+    <div id="pokedex">
+      <div>
+        <img class="logo" src="https://www.giantbomb.com/a/uploads/scale_super/0/1481/2897229-9939923796-latest"
+        alt="title">
+       </div>
+      <div id="calculator">
+        <!-- Blank container (or-yam) -->
+        <div class="empty-container">
+          <svg height="100%" width="100%">
+            <polyline
+              points="0,0 0,40 138,40 158,75 250,75 250,0 0,0"
+              style="fill: #f2f2f2; stroke: none; stroke-width: 3"
+            />
+            <polyline
+              points="0,40 138,40 158,75 250,75"
+              style="fill: none; stroke: black; stroke-width: 3"
+            />
+          </svg>
+        </div>
+        <!-- Screen & buttons -->
+        <div class="screen-container">
+          <input class="screen" type="text" placeholder="0" id="outputScreen">
+        </div>
+        <div class="buttons-container">
+          <div class="blue-buttons-container">
+            <button class="buttons" onclick="display('7')">7</button>
+            <button class="buttons" onclick="display('8')">8</button>
+            <button class="buttons" onclick="display('9')">9</button>
+            <button class="buttons" onclick="display('*')">x</button>
+            <button class="buttons" onclick="display('/')">/</button>
+            <button class="buttons" onclick="display('4')">4</button>
+            <button class="buttons" onclick="display('5')">5</button>
+            <button class="buttons" onclick="display('6')">6</button>
+            <button class="buttons" onclick="display('-')">-</button>
+            <button class="buttons" onclick="display('%')">%</button>
+            <button class="buttons" onclick="display('1')">1</button>
+            <button class="buttons" onclick="display('2')">2</button>
+            <button class="buttons" onclick="display('3')">3</button>
+            <button class="buttons" onclick="display('+')">+</button>
+            <button class="buttons" onclick="display('.')">.</button>
+            <div></div>
+            <button class="buttons" onclick="display('0')">0</button>
+          </div>
+        </div>
+        <!-- Other buttons -->
+        <div class="other-buttons-container">
+          <div class="other-buttons-left-container">
+            <div class="small-lights-container">
+              <div class="small-light red">
+                <div class="dot light-red"></div>
+              </div>
+              <div class="small-light red">
+                <div class="dot light-red"></div>
+              </div>
+            </div>
+            <div class="white-buttons-container">
+              <button class="white-button" onclick="Clear()">C</button>
+              <button class="white-button" onclick="del()">DEL</button>
+            </div>
+          </div>
+          <div class="other-btns-right-container">
+            <div class="thin-btns-container">
+              <div class="thin-btn"></div>
+              <div class="thin-btn"></div>
+            </div>
+            <div class="yellow-light yellow">
+              <div class="big-dot light-yellow">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Bottom button -->
+        <div class="bottom-container">
+            <button class="bottom-btn" onclick="calculate()">=</button>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
