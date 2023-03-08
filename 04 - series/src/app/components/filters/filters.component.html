@@ -1,0 +1,12 @@
+<div class="aside">
+  <ul class="nav flex-column">
+    <li class="nav-item" [routerLink]="['/series']">Series</li>
+    <li class="nav-item" [routerLink]="['/personajes']">Personajes</li>
+    <li *ngIf="selectActive">
+      <select class="form-select bg-dark border-0 text-white fs-5 ps-0" (change)="getChannels($event)">
+        <option value="todas">Todas las plataformas</option>
+        <option *ngFor="let channel of arrChannels" [value]="channel">{{channel.toUpperCase()}}</option>
+      </select>
+    </li>
+  </ul>
+</div>

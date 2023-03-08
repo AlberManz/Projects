@@ -1,0 +1,17 @@
+/* .aside {
+background-color: #26a0d9;
+} */
+
+.aside ul li {
+  margin: 0px 0px 15px 0px;
+  padding: 15px 0px;
+  cursor: pointer;
+  font-size: 1.25em;
+  transition: 0.5s;
+}
+
+.aside ul li:hover {
+  padding: 15px;
+  border-radius: 15px;
+  background-color: black;
+}

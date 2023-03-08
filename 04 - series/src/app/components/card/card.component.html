@@ -1,0 +1,13 @@
+<!-- <figure [routerLink]="[url, item.id]">
+  <img [src]="item.imagen" [alt]="name">
+  <div class="degradado">
+    <figcaption class="fs-6">{{name}}</figcaption>
+  </div>
+</figure> -->
+<figure [routerLink]="[url, item.id]">
+  <img class="image" [src]="item.imagen" [alt]="name">
+  <div class="overlay">
+    <figcaption class="title fs-5">{{name}}</figcaption>
+  </div>
+  
+</figure>

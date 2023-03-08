@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <header>
+    <app-header></app-header>
+  </header>
+  <div class="container-fluid">
+    <div class="row">
+      <aside *ngIf="asideVisible" class="col-12 col-md-3">
+        <app-filters></app-filters>
+      </aside>
+      <main class="col-12" [ngClass] = "{'col-md-9': asideVisible, 'col-md-12': !asideVisible}">
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+  </div>
+  <footer>
+    <app-rrss></app-rrss>
+  </footer>
+</div>

@@ -1,0 +1,8 @@
+<div>
+  <ul *ngIf="arrSeasons.length > 0; else elseBlock" class="list-unstyled">
+    <li *ngFor="let season of arrSeasons">{{season}}</li>
+  </ul>
+  <ng-template #elseBlock>
+    <p>Esta serie sólo tiene una temporada</p>
+  </ng-template>
+</div>
