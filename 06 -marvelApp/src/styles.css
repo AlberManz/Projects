@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Montserrat Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
+
+:root {
+  --font-family: font-family: 'Montserrat', sans-serif;
+  --primary-color: #ff000085;
+  --primary-color-hover: #ff0000d3;
+  --secondary-color: black;
+  --font-size: 1.2em;
+  --bs-body-bg: #232323 !important;
+}
+
+body {
+  font-family: var(--font-family);
+  color: #fff !important;
+}
+
+html {
+  background-color: var(--bs-body-bg);
+}
+
+img {
+  width: 100%;
+  display: block;
+}

@@ -1,0 +1,8 @@
+<section class="container">
+  <div class="row">
+   <article *ngFor="let serie of allSeries" class="col-12 col-md-6 col-lg-3">
+    <figure class="card">
+      <img class="image" ngSrc={{serie.thumbnail.path}}.{{serie.thumbnail.extension}} width="850" height="850" [alt]="serie.title"/>
+    </figure>
+      <h5 class="card-title mb-3 fs-6 text-center">{{serie.title}}</h5>
+    </article>

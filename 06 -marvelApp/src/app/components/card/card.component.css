@@ -1,0 +1,75 @@
+figure {
+  border-radius: 0.175rem;
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  border: none;
+}
+
+figure:hover {
+  transform: scale(1.08);
+}
+
+figure .image {
+  object-fit: cover;
+  display: block;
+}
+
+
+figure .overlay{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.795), rgba(0, 0, 0, 0.411) );
+}
+
+figure .overlay:hover {
+  opacity: 1;
+}
+
+figure figcaption {
+  position: absolute;
+  bottom: 10%;
+  right:auto;
+  font-size: var(--font-size);
+  padding-left: 1em;
+}
+
+/* Media query */
+
+@media (max-width: 483px) {
+  figure {
+    height: 275px;
+  }
+}
+
+@media (min-width: 483px) {
+  figure {
+    height: 420px;
+  }
+}
+
+@media (min-width: 768px) {
+  figure {
+    height: 280px;
+  }
+}
+
+@media (min-width: 992px) {
+  figure {
+    height: 180px;
+  }
+}
+
+@media (min-width: 1200px) {
+  figure {
+    height: 220px;
+  }
+}

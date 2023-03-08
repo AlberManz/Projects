@@ -1,0 +1,27 @@
+<nav class="navbar navbar-dark navbar-expand-lg">
+  <div class="container-fluid">
+    <a href=""><img class="logo" src="../../../assets/marvel-logo-34303.png" alt="Logo" [routerLink]="['/']"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <img class="secondary_logo" src="../../../assets/marvel-logo-34281.png" alt="">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link fs-5" [routerLink]="['/characters']">Characters</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5" [routerLink]="['/series']">Series</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5" [routerLink]="['/comics']">Comics</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

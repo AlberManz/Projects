@@ -1,0 +1,11 @@
+<section class="container">
+  <div class="row">
+    <article *ngFor="let comic of allComics" class="col-12 col-md-6 col-lg-3">
+      <figure class="card">
+        <img class="image" ngSrc={{comic.thumbnail.path}}.{{comic.thumbnail.extension}} width="553" height="850" [alt]="comic.title"/>
+      </figure>
+      <h5 class="card-title mb-3 fs-6 text-center">{{comic.title}}</h5>
+    </article>
+  </div>
+</section>
+

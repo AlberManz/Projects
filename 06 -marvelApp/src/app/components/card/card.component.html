@@ -1,0 +1,6 @@
+<figure class="card" [routerLink]="['/character', character.id]">
+  <img class="image img-fluid" src={{character.thumbnail.path}}.{{character.thumbnail.extension}} [alt]="character.name" />
+  <div class="overlay">
+      <figcaption>{{character.name}}</figcaption>
+  </div>
+</figure>

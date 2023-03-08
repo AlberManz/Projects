@@ -1,0 +1,71 @@
+<section *ngFor="let character of characterInfo" class="container bg-transparent text-white mt-3">
+  <h1 class="title mb-4">{{character.name}}</h1>
+  <div class="row">
+    <figure class="col-12 col-md-4">
+      <img class="image" src={{character.thumbnail.path}}.{{character.thumbnail.extension}} [alt]="character.name" class="img-fluid img-thumbnail">
+    </figure>
+    <div class="col-12 col-md-8">
+      <p class="description">{{character.description}}</p>
+      <div class="d-flex justify-content-around mt-5">
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#comicsBackdrop" (click)="fetchComicsByCharacter(character.id)">
+          Comics
+        </button>
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#seriesBackdrop" (click)="fetchSeriesByCharacter(character.id)">
+          Series
+        </button>
+        <button type="button" class="btn" [routerLink]="['/characters']">Volver</button>
+      </div>
+    </div>
+  </div>
+<div class="modal fade text-dark" id="comicsBackdrop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Comics</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row" *ngIf="showComicsDiv">
+          <div class="col-lg-4 mt-3 mb-3" *ngFor="let comic of comics">
+            <img src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}" width="100%" class="card-img-top" alt="{{comic.title}}"/>
+            <h5 class="card-title text-center"> {{comic.title}} </h5>
+          </div>
+        </div>
+      </div>
+      <div *ngIf='!showComicsDiv' | async >
+        <h4>No Comics For this Character</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade text-dark" id="seriesBackdrop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Series</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row" *ngIf="showSeriesDiv">
+          <div class="col-lg-3 mt-3 mb-3" *ngFor="let serie of series">
+            <img src="{{serie.thumbnail.path}}.{{serie.thumbnail.extension}}" width="100%" height="50%" alt="{{serie.title}}" />
+            <h5 class="card-title text-center"> {{serie.title}} </h5>
+          </div>
+        </div>
+      </div>
+      <div *ngIf='!showSeriesDiv' | async >
+        <h4> No Series For this Character </h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+

@@ -1,0 +1,24 @@
+nav {
+  height: 100px;
+  margin-bottom: 50px;
+  background-color: var(--bs-body-bg);
+}
+
+.logo{
+  height: 50px;
+  width: 120px;
+}
+
+.secondary_logo {
+  height: 30px;
+  width: 100px;
+}
+
+.nav-link {
+  color: #fff;
+}
+
+.nav-link:hover {
+  color: var(--primary-color-hover);
+  transition: .6s ease;
+}
