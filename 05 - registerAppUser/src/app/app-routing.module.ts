@@ -13,17 +13,17 @@ const routes: Routes = [
   { path: "", pathMatch: "full", component: HomeComponent },
   { path: "register", component: RegisterComponent },
   { path: "login", component: LoginComponent },
-  //! Aquí no podemos entrar a no ser que estemos logueados, que haremos con GUARD
-  { path: "dashboard", component: DashboardComponent, canActivate:[LoginGuard], children: 
-    [
-      { path: "", pathMatch: "full", redirectTo: "products" },
-      { path: "products", component: ProductsListComponent },
-      { path: "product/:idproduct", component: ProductViewComponent},
-      { path: "new-product", component: FormComponent},
-      { path: "update/:idproduct", component: FormComponent}
-    ] 
+  {
+    path: "dashboard", component: DashboardComponent, canActivate: [LoginGuard], children:
+      [
+        { path: "", pathMatch: "full", redirectTo: "products" },
+        { path: "products", component: ProductsListComponent },
+        { path: "product/:idproduct", component: ProductViewComponent },
+        { path: "new-product", component: FormComponent },
+        { path: "update/:idproduct", component: FormComponent }
+      ]
   },
-  { path: "**", redirectTo: "/" } // Enviamos a la ruta raíz (home) con /
+  { path: "**", redirectTo: "/" }
 ];
 
 @NgModule({

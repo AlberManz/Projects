@@ -11,32 +11,33 @@ export class FiltersComponent implements OnInit {
   arrChannels: string[] = []
   selectActive: boolean = true
 
-  constructor (
-    private seriesServices:SeriesService,
+  constructor(
+    private seriesServices: SeriesService,
     private router: Router
-    ) {}
+  ) { }
 
-  ngOnInit () : void{
+  ngOnInit(): void {
     this.arrChannels = this.seriesServices.getAllChannels()
   }
 
-  ngDoCheck () : void {
+  // Filtro
+  ngDoCheck(): void {
     let path = this.router.url
-    this.selectActive = (path.includes('personaje') ? false : true) // ponemos includes personaje porque de esa manera nos valdrá para personaje y personajes y me lo quitará de cualquier url que tenga la palabra personaje/personajes
+    this.selectActive = (path.includes('personaje') ? false : true)
   }
 
-  getChannels ($event: any): void {
-    if($event.target.value === 'todas'){
-      // Todas las series
+  // Conseguimos los canales
+  getChannels($event: any): void {
+    if ($event.target.value === 'todas') {
       this.router.navigate(['/series'])
-    }else{
-      // Iríamos a la ruta de series por canal
+    } else {
       this.router.navigate(['/series', this.urlSanitizer($event.target.value)])
     }
   }
 
-  urlSanitizer (pChannel: string): string {
-    let resultado = pChannel.split(" ")[0]; // Parto lo que recibo (que son dos palabras) y las parto por el espacio, quedándome con la primera parte (por eso [0])
+  // Sanitizamos la url
+  urlSanitizer(pChannel: string): string {
+    let resultado = pChannel.split(" ")[0]
     return resultado.toLowerCase()
   }
 }

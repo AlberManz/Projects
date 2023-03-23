@@ -12,30 +12,23 @@ import { SeriesService } from 'src/app/services/series.service';
 })
 export class ItemListComponent implements OnInit {
 
-  //* Opción con 2 arrays más fácil de la otra forma
-  // arrSeries: Serie[] = []
-  // arrCharacters: Character[] = []
-
-  titulo: string=""
+  titulo: string = ""
   arrItems: Serie[] | Character[] | any[] = []
-  canal: string = "" // Creamose sta propiedad porque queremos pintar el nombre de la serie en el html
+  canal: string = ""
 
-  constructor (
+  constructor(
     private seriesService: SeriesService,
     private charactersService: CharactersService,
     private activatedRoute: ActivatedRoute
-    ) {}
+  ) { }
 
-  ngOnInit () {
-    //! Aquí vamos a tener que discriminar entre series y personajes, estamos en un componente que tiene ruta estática
-    // Opción 1: javascript -> console.log(window.location)
-    // Opción 2: con router -> console.log(this.router.url)
-    this.titulo = this.activatedRoute.snapshot.url[0].path // Captura de ruta estática (si hacemos un console.log vemos que dentro del objeto hay un url que es un array y queremos la posición .)
+  ngOnInit() {
+    this.titulo = this.activatedRoute.snapshot.url[0].path
     this.arrItems = (this.titulo === 'series') ? this.seriesService.getAll() : this.charactersService.getAll()
   }
 
-  ngDoCheck (): void {
-    if(this.activatedRoute.snapshot.url.length > 1){ // Con esto comprobamos que el array url tiene más de un elemento, lo que significa que la ruta va a tener varias partes
+  ngDoCheck(): void {
+    if (this.activatedRoute.snapshot.url.length > 1) {
       this.canal = this.activatedRoute.snapshot.url[1].path
       this.arrItems = this.seriesService.getByChannel(this.canal)
     }

@@ -8,10 +8,9 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
 
-  constructor (private router: Router) {}
+  constructor(private router: Router) { }
 
-  cerrarSesion (): void {
-    // Vaciar el token del localStorage y redirigir a login
+  cerrarSesion(): void {
     localStorage.removeItem('token');
     this.router.navigate(['/login']);
   }

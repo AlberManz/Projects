@@ -11,22 +11,22 @@ export class SeriesService {
 
   constructor() { }
 
-  getAll (): Serie[] {
+  getAll(): Serie[] {
     return this.arrSeries;
   }
 
-  getById (pId: number): Serie | undefined {
+  getById(pId: number): Serie | undefined {
     return this.arrSeries.find(serie => serie.id === pId);
   }
 
-  getAllChannels (): string[] {
-    //! Lo mapeamos para coger SOLO las series
+  getAllChannels(): string[] {
+    //! Mapeamos para coger SOLO las series
     let channels = this.arrSeries.map(serie => serie.canal);
     channels = [...new Set(channels)]; // Eliminamos los duplicados
     return channels
   }
 
-  getByChannel (pCanal: string): Serie[] {
+  getByChannel(pCanal: string): Serie[] {
     return this.arrSeries.filter(serie => serie.canal.toLowerCase().includes(pCanal))
   }
 }

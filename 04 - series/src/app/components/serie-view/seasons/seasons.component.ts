@@ -10,16 +10,15 @@ import { SeriesService } from 'src/app/services/series.service';
 })
 export class SeasonsComponent implements OnInit {
 
-  // Necesito capturar el id de la serie del componente padre y llamar al servicio de series para obtener el array de temporadas
   arrSeasons: string[] = []
 
-  constructor (
+  constructor(
     private activatedRoute: ActivatedRoute,
     private seriesService: SeriesService
-  ) {}
+  ) { }
 
-  ngOnInit () {
-    this.activatedRoute.parent?.params.subscribe((params:any) => {
+  ngOnInit() {
+    this.activatedRoute.parent?.params.subscribe((params: any) => {
       let idSerie = parseInt(params.idserie)
       let response = this.seriesService.getById(idSerie)
       if (response) {

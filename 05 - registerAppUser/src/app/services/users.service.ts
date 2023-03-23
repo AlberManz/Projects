@@ -13,15 +13,8 @@ export class UsersService {
 
   constructor(private httpClient: HttpClient) { }
 
-  // El servicio va a hacer peticiones http. Necesitamos el httpClientModule, httpClient y la url a la cual nos conectamos
 
-  create (pUser: User): Promise<any> {
-    // const httpOptions = {
-    //   headers: new HttpHeaders ({
-    //     'Content-type': 'application/json',
-    //     'token': 'nlka54564' Esto habrá casos en el que nos lo exijan
-    //   })
-    // }
+  create(pUser: User): Promise<any> {
 
     return lastValueFrom(this.httpClient.post<User>(this.baseUrl + '/users', pUser, this.getHeaders()))
   }
@@ -30,9 +23,9 @@ export class UsersService {
     return lastValueFrom(this.httpClient.post<any>(`${this.baseUrl}/login`, pFormValue, this.getHeaders()))
   }
 
-  getHeaders (): any { // Como la estábamos necesitando dos veces hacemos una función
+  getHeaders(): any {
     return {
-      headers: new HttpHeaders ({
+      headers: new HttpHeaders({
         'Content-type': 'application/json',
       })
     }

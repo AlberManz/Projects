@@ -8,10 +8,9 @@ const app = require('../app');
 const debug = require('debug')('appgym:server');
 const http = require('http');
 
-//! Config variables de entorno (.env)
 require('dotenv').config();
 
-//! Ponemos el config de la BD que hemos creado en la raíz del proyecto
+
 require('../config/db');
 
 /**

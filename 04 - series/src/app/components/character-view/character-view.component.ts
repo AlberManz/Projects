@@ -12,18 +12,17 @@ export class CharacterViewComponent implements OnInit {
 
   character!: Character;
 
-  constructor (
+  constructor(
     private activatedRoute: ActivatedRoute,
     private charactersService: CharactersService
-    ) {}
+  ) { }
 
-  ngOnInit () : void {
-    // Capturamos ruta activa (porque sé que va a ser personajes/1,2,3... dependiendo del personaje que sea)
-    this.activatedRoute.params.subscribe((params:any) => {
+  ngOnInit(): void {
+    this.activatedRoute.params.subscribe((params: any) => {
       let id: number = parseInt(params.idcharacter)
 
       let response = this.charactersService.getById(id)
-      if(response) {
+      if (response) {
         this.character = response
       }
     })

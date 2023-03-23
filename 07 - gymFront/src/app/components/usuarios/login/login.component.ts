@@ -27,14 +27,12 @@ export class LoginComponent {
   }
 
   async onSubmit() {
-    //* Cuando le volvemos a dar al botón y se lanza esta función, el errorMessage vuelve a vacío 
     this.errorMessage = '';
     const response = await this.usuariosService.login(this.formulario.value);
     console.log(response);
     if (response.erroraco) {
       this.errorMessage = response.erroraco;
     } else {
-      //* Si le ponemos el await espera a que se cierre la alerta y luego hace el router.navigate. Si no se pone, se ve por debajo de la alerta la página clientes (en este caso) 
       await Swal.fire({
         title: 'Estás dentro',
         text: response.success,

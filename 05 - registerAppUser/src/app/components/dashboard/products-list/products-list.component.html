@@ -1,63 +1,48 @@
-<!--! Mi forma  -->
-<!-- <section class="container mt-3">
-  <h2>Lista de productos</h2>
-  <hr>
-  <div class="row">
-    <article class="col-12 col-md-4 card-group" *ngFor="let product of arrProducts | paginate: { itemsPerPage: 3, currentPage: page }">
-      <figure>
-        <img [src]="product?.image" [alt]="product?.name">
-        <figcaption>{{product?.name}}</figcaption>
-        <p>{{product?.price}}</p>
-        <p>{{product?.category}}</p>
-        <p>{{product?.description}}</p>
-      </figure>
-    </article>
-  </div>
-</section>
-
-<pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls> -->
-
-<!--! Profesor  -->
 <section class="container mt-3">
   <h2>Lista de productos</h2>
   <div>
     <button [disabled]="currentPage === 1" class="btn btn-secondary m-1" (click)="goToPage($event)">Prev</button>
-    <button [disabled]="currentPage === totalPages" class="btn btn-secondary m-1" (click)="goToPage($event)">Next</button>
+    <button [disabled]="currentPage === totalPages" class="btn btn-secondary m-1"
+      (click)="goToPage($event)">Next</button>
   </div>
   <hr>
   <!--! Gestionar las notificaciones -->
   <app-myalert [message]="mensaje" [viewAlert]="vistaAlerta" [typeAlert]="tipoAlerta"></app-myalert>
-    <table class="table table-striped" *ngIf="arrProducts.length > 1; elseBlock">
-      <thead>
-        <th class="text-center"></th>
-        <th class="text-center"></th>
-        <th class="text-center"></th>
-        <th class="text-center"></th>
-        <th class="text-center"></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </thead>
-      <tbody>
-        <tr *ngFor="let product of arrProducts" >
-          <td><img [src]="product?.image" class="img-fluid"></td>
-          <td>{{product?.name}}</td>
-          <td>{{product?.price}}€</td>
-          <td [ngStyle]="{ color: product?.active ? 'green' : 'red' }"><strong>{{product.active ? 'Disponible' : 'No disponible'}}</strong>
-          <td>
-            <button class="btn btn-warning btn-sm"><i class="fa-solid fa-circle-info" [routerLink]="['/dashboard', 'product', product._id]"></i></button>
-          </td>
-          <td>
-            <button class="btn btn-dark btn-sm"><i class="fa-regular fa-pen-to-square" [routerLink]="['/dashboard', 'update', product._id]"></i></button>
-          </td>
-          <td>
-            <button class="btn btn-danger btn-sm" (click)="deleteProduct(product?._id)"><i class="fa-solid fa-trash-can"></i></button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <ng-template #elseBlock>
-      <h2>No hay productos</h2>
-    </ng-template>
+  <table class="table table-striped" *ngIf="arrProducts.length > 1; elseBlock">
+    <thead>
+      <th class="text-center"></th>
+      <th class="text-center"></th>
+      <th class="text-center"></th>
+      <th class="text-center"></th>
+      <th class="text-center"></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of arrProducts">
+        <td><img [src]="product?.image" class="img-fluid"></td>
+        <td>{{product?.name}}</td>
+        <td>{{product?.price}}€</td>
+        <td [ngStyle]="{ color: product?.active ? 'green' : 'red' }"><strong>{{product.active ? 'Disponible' : 'No
+            disponible'}}</strong>
+        <td>
+          <button class="btn btn-warning btn-sm"><i class="fa-solid fa-circle-info"
+              [routerLink]="['/dashboard', 'product', product._id]"></i></button>
+        </td>
+        <td>
+          <button class="btn btn-dark btn-sm"><i class="fa-regular fa-pen-to-square"
+              [routerLink]="['/dashboard', 'update', product._id]"></i></button>
+        </td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="deleteProduct(product?._id)"><i
+              class="fa-solid fa-trash-can"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #elseBlock>
+    <h2>No hay productos</h2>
+  </ng-template>
 
 </section>

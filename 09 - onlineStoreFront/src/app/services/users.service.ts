@@ -19,5 +19,4 @@ export class UsersService {
       this.httpClient.post<any>(`${this.baseUrl}/login`, formsValue)
     )
   }
-
 }

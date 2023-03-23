@@ -11,9 +11,7 @@ export class MyalertComponent {
   @Input() viewAlert: boolean = false;
   @Input() typeAlert: string = ""
 
-  closeAlert (): void {
-    this.viewAlert = !this.viewAlert; // Lo único que hace es hacer que viewAlert se ponga en false para que se quite la alerta
+  closeAlert(): void {
+    this.viewAlert = !this.viewAlert;
   }
-
-  ngDoCheck () {}
 }

@@ -1,18 +1,16 @@
 <div class="row">
   <h2>Página: {{currentPage}}</h2>
   <div class="botones mb-5">
-    <!-- Le pasamos true/false a la función para diferenciar qué hace cada uno. Es indiferente lo que le pongamos pero al ser dos queda bien true/false -->
-    <!-- El botón anterior solo apareace SI LA PÁGINA ES DIFERENTE DE 1 -->
     <button class="btn btn-dark" (click)="cambiaPagina(false)" *ngIf="currentPage !==1">
       Anterior
     </button>
-    <!-- El botón siguiente aparece siempre SI LA PÁGINA ACTUAL ES DIFERENTE AL NÚMERO TOTAL DE PAGES (que sería la última) -->
+
     <button class="btn btn-dark ms-3" (click)="cambiaPagina(true)" *ngIf="currentPage !== pages">
       Siguiente
     </button>
   </div>
   <div>
-    <!-- Nos pinta botones con los números de las páginas -->
+
     <button *ngFor="let page of arrFromNumber(pages)" (click)="seleccionPagina(page)">
       {{page}}
     </button>
@@ -23,7 +21,6 @@
     <p>{{product.description}}</p>
     <p>€{{product.price}}</p>
     <p>Stock: {{product.stock}}</p>
-    <!-- Muestra product.image si existe -->
     <p *ngIf="product.image">
       <img class="img" [src]="'http://localhost:3000/images/' + product.image" alt="{{product.name}}">
     </p>

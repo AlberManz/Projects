@@ -13,9 +13,6 @@ export class ProductsService {
     this.baseUrl = 'http://localhost:3000/api/products';
   }
 
-  //* Las cabeceras se las hemos pasado desde un INTERCEPTOR
-  // 1. En el app module ts añadimos un provider
-  // 2. Configuramos el interceptor
   getAll() {
     return firstValueFrom(
       this.httpClient.get<any>(this.baseUrl)

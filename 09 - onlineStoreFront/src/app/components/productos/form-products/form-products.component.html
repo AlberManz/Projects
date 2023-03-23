@@ -24,8 +24,6 @@
       </div>
       <div class="form-group mb-3">
         <label class="form-label">Imagen</label>
-        <!--* Hay que ponerlo de tipo FILE para mandar fotos y quitar el formControlName-->
-        <!--* Se le tiene que poner el evento change() con una función que pase el $event  -->
         <input type="file" class="form-control" (change)="onChange($event)">
       </div>
       <div class="form-group d-flex mb-3">
@@ -35,7 +33,6 @@
       <input type="submit" class="btn btn-dark" value="Crear producto">
     </form>
     <div class="errores">
-      <!-- Simplemente imprimimos el error o errores que nos devuelva el back -->
       <p *ngFor="let error of arrErrores">{{error}}</p>
     </div>
   </div>

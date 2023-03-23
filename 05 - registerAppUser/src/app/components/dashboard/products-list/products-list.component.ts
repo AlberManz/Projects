@@ -16,24 +16,24 @@ export class ProductsListComponent implements OnInit {
   vistaAlerta: boolean = false;
   tipoAlerta: string = "";
 
-  constructor (private productsService: ProductsService) {}
+  constructor(private productsService: ProductsService) { }
 
-  async ngOnInit (): Promise<void> {
+  async ngOnInit(): Promise<void> {
     let response = await this.productsService.getAll();
-    //console.log(response)
-    this.currentPage = response.page; // Se ve en el objeto que imprimimos por consola
-    this.totalPages = response.total_pages; // Esto se ve en el console.log que hacemos de response. Al igual que accedemos a results, podemos acceder a total_pages
+
+    this.currentPage = response.page;
+    this.totalPages = response.total_pages;
     this.arrProducts = response.results;
   }
 
-  async goToPage ($event: any): Promise<void> {
+  async goToPage($event: any): Promise<void> {
     this.currentPage = ($event.target.innerText === 'Next') ? this.currentPage + 1 : this.currentPage - 1;
 
     let response = await this.productsService.getAll(this.currentPage);
     this.arrProducts = response.results
   }
 
-  async deleteProduct (pId: string | undefined): Promise<void> {
+  async deleteProduct(pId: string | undefined): Promise<void> {
     this.vistaAlerta = false
     if (pId !== undefined) {
       let response = await this.productsService.delete(pId);

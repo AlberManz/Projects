@@ -9,7 +9,7 @@ router.use(
   require('./api/clientes')
 );
 
-router.use('/profesores', checkToken, checkAdmin, require('./api/profesores')); // El checkAdmin marca que a profesores solo pueden acceder los que tengan el rol de admin
+router.use('/profesores', checkToken, checkAdmin, require('./api/profesores'));
 
 router.use('/usuarios', require('./api/usuarios'));
 
